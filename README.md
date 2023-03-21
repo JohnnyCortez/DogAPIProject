@@ -14,7 +14,7 @@ The following **required** functionality is completed:
 Clicking a button creates a new API fetch request and displays at least three attributes from the returned JSON data - not completed
 Only one item/API call is viewable at a time - complete
 API calls should appear random to the user - complete
-At least one image is displayed per API call - not complete
+At least one image is displayed per API call - complete
 Clicking on a displayed value for one attribute adds it to a displayed ban list - partially
 Attributes on the ban list prevent further images/API results with that attribute from being displayed - not completed
 
@@ -26,7 +26,7 @@ No optional features were added.
 
 Here's a walkthrough of implemented features:
 
-<img src='Animation.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='Animation_DogApp.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with ScreenToGif
 
