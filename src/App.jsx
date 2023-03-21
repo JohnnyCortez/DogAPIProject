@@ -43,6 +43,9 @@ function App() {
             subAttributes: [
               breed.weight.metric,
               breed.height.metric,
+              breed.origin, 
+              breed.life_span,
+              breed.breed_group,
               ...(breed.temperament ? breed.temperament.split(',').map((t) => t.trim()) : []),
             ],
           };
