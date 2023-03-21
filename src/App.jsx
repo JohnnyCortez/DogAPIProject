@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import "./App.css";
 
 const DogAPI = 'https://api.thedogapi.com/v1/images/search';
 const DogBreedsAPI = 'https://api.thedogapi.com/v1/breeds';
@@ -9,6 +10,7 @@ function App() {
   const [dogDict, setDogDict] = useState([]);
   const [dogAttributes, setAttributes] = useState([]);
   const [bannedAttributes, setBannedAttributes] = useState([]);
+  const [prevImages, setPrevImages] = useState([]);
 
   //button that will generate a picture of a dog based on the criteria of a ban list
   //the button will also generate a div that maps out buttons of random attributes of that dog that the user may click to add to a banList
@@ -21,6 +23,7 @@ function App() {
       .then((response) => response.json())
       .then((data) => {
         setDogImage(data[0].url);
+        setPrevImages((prev) => [...prev, data[0].url]);
       })
       .catch((error) => console.log(error));
   };
@@ -61,8 +64,6 @@ function App() {
             id: breed.id,
             name: breed.name,
             subAttributes: [
-              breed.weight.metric,
-              breed.height.metric,
               breed.origin, 
               breed.life_span,
               breed.breed_group,
@@ -94,28 +95,34 @@ function App() {
     }
   };
 
-
-
-
   return (
     <div className="App">
+      <div className='section'>
       <h1>Dog Image</h1>
-      <img src={dogImage} alt="A random dog" height='500' width='500'/>
-      <button onClick={imageGenerator}>Get Another Dog</button>
+      <img src={dogImage} alt="A random dog" height='300' width='300'/>
+      <button className='section' onClick={imageGenerator}>Get Another Dog</button>
+      </div>
 
-      <h1>Attributes</h1>
-        {currAttributes.length > 0 ? currAttributes.map((attribute) => (
-        <button onClick={handleAttributeToggle(attribute)}>{attribute}</button>
-      )) : (<div>''</div>)
-      }
+      <div className='section'>
+      <h2>Attributes</h2>
+      {currAttributes.length > 0 ? currAttributes.map((attribute) => (
+        <button className='section' onClick={() => handleAttributeToggle(attribute)}>{attribute}</button>
+      )) : (<div></div>)}
+      </div>
       
-      <h1>BannedAttributes</h1>
+      <div className='section'>
+      <h2>BannedAttributes</h2>
       {bannedAttributes.length > 0 ? bannedAttributes.map((attribute) => (
-        <h5>{attribute}</h5>
-      )) : (<div>''</div>)
-      }
+        <p>{attribute}</p>
+      )) : (<div></div>)}
+      </div>
 
-      
+      <div className='section'>
+        <h2>Images Viewed so Far</h2>
+        {prevImages.length > 0 ? prevImages.map((url) => (
+        <img src={url} height='100' width='100'/>
+      )) : (<div></div>)}
+      </div>
     </div>
   );
 }
