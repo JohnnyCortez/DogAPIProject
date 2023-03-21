@@ -12,15 +12,21 @@ Time spent: 6 hours spent in total
 The following **required** functionality is completed:
 
 Clicking a button creates a new API fetch request and displays at least three attributes from the returned JSON data - completed
+
 Only one item/API call is viewable at a time - completed
+
 API calls should appear random to the user - completed
+
 At least one image is displayed per API call - completed
+
 Clicking on a displayed value for one attribute adds it to a displayed ban list - completed
+
 Attributes on the ban list prevent further images/API results with that attribute from being displayed - completed
 
 The following **optional** features are implemented:
 
 Multiple types of attributes can be added to the ban list - completed
+
 Users can see a stored history of their previously viewed items from this session - completed
 
 ## Video Walkthrough
