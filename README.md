@@ -27,7 +27,7 @@ Users can see a stored history of their previously viewed items from this sessio
 
 Here's a walkthrough of implemented features:
 
-<img src='Animation_DogApp.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='Animation_Gif.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with ScreenToGif
 
